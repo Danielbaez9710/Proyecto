@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
         <div class="hijo col-8">
             <form class="col-4">
                 <div class="title">
-                    <h4>Iniciar Sesión</h4>
+                    <h4>Registro</h4>
                     <hr>
                 </div>
                 <div class="label col-md-12">
@@ -23,20 +24,27 @@
                     <input type="text" class="form-control" id="inputNombre4">
                 </div>
                 <div class="label col-md-12">
-                    <label for="inputEmail4" class="form-label">Correo</label>
+                    <label for="inputEmail4" class="form-label">Apellido</label>
                     <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="label col-md-12">
+                    <label for="inputPassword4" class="form-label">Edad</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <div class="label col-md-12">
+                    <label for="inputPassword4" class="form-label">Email</label>
+                    <input type="password" class="form-control" id="inputPassword4">
                 </div>
                 <div class="label col-md-12">
                     <label for="inputPassword4" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" id="inputPassword4">
                 </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button type="button" class="btn btn-dark boton2 ">Ingresar</button>
-                    
+                    <button type="submit" class="btn btn-dark boton2 ">Registrarse</button>
                 </div>
-                <div class="link-registro col-4 my-4">
-                    <h6>¿No tienes cuenta?</h6>
-                    <a href="{% url 'registro' %}">Registrate</a>
+                <div class="link-registro col-4 my-2">
+                    
+                    <a href="{% url 'login' %}">Ya tengo cuenta</a>
                 </div>
             </form>
         </div>

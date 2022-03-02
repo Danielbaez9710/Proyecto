@@ -10,3 +10,8 @@ def login(request):
     template = loader.get_template('login/login.html')
     context = {}
     return HttpResponse(template.render(context,request))
+
+def registro(request):
+    template = loader.get_template('login/registro.html')
+    context = {}
+    return HttpResponse(template.render(context,request))

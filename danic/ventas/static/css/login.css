@@ -28,6 +28,7 @@ form {
     border-radius: 30px;
     padding: 20px;
     background: #fff;
+
 }
 
 .title {
@@ -41,16 +42,13 @@ hr{
 }
 
 .label {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
-.boton {
-    margin-top: 15px;
-}
 
-.boton2 {
-    background: #222326 ;
-    color: #fff;
+.boton2:hover {
+    background: #fff;
+    color: #222326;
 }
 
 
@@ -65,6 +63,6 @@ h6 {
 }
 
 a {
-    font-size: 10px;
+    font-size: 12px;
     color: #222326;
 }
