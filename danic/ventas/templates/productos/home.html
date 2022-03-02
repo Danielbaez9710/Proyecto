@@ -1,0 +1,653 @@
+{% extends "base_plantilla.html" %}
+{% load static %}
+
+{% block headers %}
+<title>Home</title>
+{% endblock %}
+
+{% block content %}
+
+ <!-- Comienzo del main -->
+ <main class="container">
+    <!-- Carousel -->
+    <div class="row">
+        <div class="col">
+            <div id="slideshow" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/bg1.jpg' %}" alt="" class="w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/bg2.jpg' %}" alt="" class="w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/bg3.jpg' %}" alt="" class="w-100">
+                    </div>
+                </div>
+
+                <!-- Controles de anterior y siguiente -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#slideshow" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#slideshow" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                
+                <!-- Indicadores -->
+                <div class="carousel-indicators">
+                    <button class="active" type="button" data-bs-target="#slideshow" data-bs-slide-to="0" aria-current="true" aria-label="Slide #1"></button>
+                    <button type="button" data-bs-target="#slideshow" data-bs-slide-to="1" aria-current="true" aria-label="Slide #2"></button>
+                    <button type="button" data-bs-target="#slideshow" data-bs-slide-to="2" aria-current="true" aria-label="Slide #3"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Galeria -->
+    <div class="row py-5">
+        <div class="col">
+            <div class="border-bottom">
+                <h1 class="text-center">Productos Destacados</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor de los productos destacados -->
+    <div class="row">
+        <!-- Primer prodcuto destacado -->
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/1.png' %}" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Celular Motorola</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#mi-modal">Detalles</a>
+                        <h6>$679.900</h6>
+
+                        <!-- Ventana modal -->
+                        <div class="modal fade" id="mi-modal" tabindex="-1" arial-hidden="true" aria-labelledby="label-modal-1" data-bs-backdrop="static">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <!-- Contenido de la caja -->
+                                <div class="modal-content">
+                                    <!-- Encabezado de la caja -->
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Celular Motorola One Fusion 128GB verde</h5>
+                                    </div>
+                                    <!-- Cuerpo de la caja -->
+                                    <div class="modal-body">
+                                        <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-6 align-self-center"> <!-- Alineamos la imagen verticalmente -->
+                                                    <img src="{% static 'img/1.png' %}" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title text-danger mb-3">$679.900</h5>
+                                                        <div class="input-group mb-3">
+                                                            <select id="cantidad" class="form-select">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                            <button class="btn btn-secondary" type="button">Agregar</button>
+                                                        </div>
+                                                        <h6>Caracteristicas Destacadas</h6>
+                                                        <ul>
+                                                            <li><small class="text-muted">Más de 2 días de batería con tu Batería de 5000 mAh</small></li>
+                                                            <li><small class="text-muted">Sistema de 4 cámaras con inteligencia artificial</small></li>
+                                                            <li><small class="text-muted">128GB no hay límites para tus recuerdos</small></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Metodos de envio -->
+                                        <h6>Metodos de envio</h6>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="envio">
+                                            <label for="envio" class="form-check-label text-muted">Envio a tu direccion - Gratis</p></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="recoger">
+                                            <label for="recoger" class="form-check-label text-muted">Recoger en tienda - Gratis</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-secondary" type="button">Acepto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segundo producto destacado -->
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/2.png' %}"   alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Estufa mabe</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#mi-modal2">Detalles</a>
+                        <h6>$1.500.000</h6>
+
+                        <!-- Ventana modal -->
+                        <div class="modal fade" id="mi-modal2" tabindex="-1" arial-hidden="true" aria-labelledby="label-modal-2" data-bs-backdrop="static">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <!-- Contenido de la caja -->
+                                <div class="modal-content">
+                                    <!-- Encabezado de la caja -->
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Estufa de Piso Mabe 4 puestos Gas Natural</h5>
+                                    </div>
+                                    <!-- Cuerpo de la caja -->
+                                    <div class="modal-body">
+                                        <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-6 align-self-center"> <!-- Alineamos la imagen verticalmente -->
+                                                    <img src="{% static 'img/2.png' %}" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title text-danger mb-3">$1.019.900</h5>
+                                                        <div class="input-group mb-3">
+                                                            <select id="cantidad" class="form-select">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                            <button class="btn btn-secondary" type="button">Agregar</button>
+                                                        </div>
+                                                        <h6>Caracteristicas Destacadas</h6>
+                                                        <ul>
+                                                            <li><small class="text-muted">Sistema de cocción Perfect Cook</small></li>
+                                                            <li><small class="text-muted">El gratinador a gas con Placa deflactora</small></li>
+                                                            <li><small class="text-muted">Valvula de Seguridad en horno</small></li>
+                                                            <li><small class="text-muted">Quemadores multitamaños Ahorro de tiempo y Gas,</small></li>
+                                                            <li><small class="text-muted">Ultimate Cleaning , Fácil limpieza</small></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Metodos de envio -->
+                                        <h6>Metodos de envio</h6>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="envio">
+                                            <label for="envio" class="form-check-label text-muted">Envio a tu direccion - Gratis</p></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="recoger">
+                                            <label for="recoger" class="form-check-label text-muted">Recoger en tienda - Gratis</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-secondary" type="button">Acepto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <!-- Tercer producto destacado -->
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/3.png' %}"  alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Freidora IMUSA</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#mi-modal3">Detalles</a>
+                        <h6>$349.900</h6>
+
+                        <!-- Ventana modal -->
+                        <div class="modal fade" id="mi-modal3" tabindex="-1" arial-hidden="true" aria-labelledby="label-modal-3" data-bs-backdrop="static">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <!-- Contenido de la caja -->
+                                <div class="modal-content">
+                                    <!-- Encabezado de la caja -->
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Freidora de Aire IMUSA Easy Fry Deluxe Digital Negro</h5>
+                                    </div>
+                                    <!-- Cuerpo de la caja -->
+                                    <div class="modal-body">
+                                        <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-6 align-self-center"> <!-- Alineamos la imagen verticalmente -->
+                                                    <img src="{% static 'img/3.png' %}"  class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title text-danger mb-3">$349.900</h5>
+                                                        <div class="input-group mb-3">
+                                                            <select id="cantidad" class="form-select">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                            <button class="btn btn-secondary" type="button">Agregar</button>
+                                                        </div>
+                                                        <h6>Caracteristicas Destacadas</h6>
+                                                        <ul>
+                                                            <li><small class="text-muted">Temporizador de 60 min. con alerta sonora, mayor seguridad</small></li>
+                                                            <li><small class="text-muted">Cesta antiadherente, evita que se peguen los alimentos</small></li>
+                                                            <li><small class="text-muted">Temperatura de alta precisión desde 80° C hasta 200°C</small></li>
+                                                            <li><small class="text-muted">Rejilla antiadherente en su interior, más fácil de limpiar</small></li>
+                                                            <li><small class="text-muted">Diseño con panel digital, es automática y programable</small></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Metodos de envio -->
+                                        <h6>Metodos de envio</h6>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="envio">
+                                            <label for="envio" class="form-check-label text-muted">Envio a tu direccion - Gratis</p></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="recoger">
+                                            <label for="recoger" class="form-check-label text-muted">Recoger en tienda - Gratis</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-secondary" type="button">Acepto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuarto producto destacado -->
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/4.png' %}"  alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Lavadora LG</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#mi-modal4">Detalles</a>
+                        <h6>$3.119.900</h6>
+
+                        <!-- Ventana modal -->
+                        <div class="modal fade" id="mi-modal4" tabindex="-1" arial-hidden="true" aria-labelledby="label-modal-4" data-bs-backdrop="static">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <!-- Contenido de la caja -->
+                                <div class="modal-content">
+                                    <!-- Encabezado de la caja -->
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Lavadora/Secadora LG Carga Frontal 16KG Blanco</h5>
+                                    </div>
+                                    <!-- Cuerpo de la caja -->
+                                    <div class="modal-body">
+                                        <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-6 align-self-center"> <!-- Alineamos la imagen verticalmente -->
+                                                    <img src="{% static 'img/4.png' %}"  class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title text-danger mb-3">$3.119.900</h5>
+                                                        <div class="input-group mb-3">
+                                                            <select id="cantidad" class="form-select">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                            <button class="btn btn-secondary" type="button">Agregar</button>
+                                                        </div>
+                                                        <h6>Caracteristicas Destacadas</h6>
+                                                        <ul>
+                                                            <li><small class="text-muted">AI DD™ Inteligencia Artificial, cuidado Inteligente de las prendas</small></li>
+                                                            <li><small class="text-muted">Motor Inverter Direct Drive 10 Años de Garantia</small></li>
+                                                            <li><small class="text-muted">Tecnología Steam™, elimina hasta en un 99% bacterias y alérgenos</small></li>
+                                                            <li><small class="text-muted">TurboWash™ ¡Lavado Limpio y Rápido en 55 Minutos!</small></li>
+                                                            <li><small class="text-muted">ThinQ™ App Control Opera o monitorea desde cualquier lugar en cualquier momento</small></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Metodos de envio -->
+                                        <h6>Metodos de envio</h6>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="envio">
+                                            <label for="envio" class="form-check-label text-muted">Envio a tu direccion - Gratis</p></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="recoger">
+                                            <label for="recoger" class="form-check-label text-muted">Recoger en tienda - Gratis</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-secondary" type="button">Acepto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quinto producto destacado -->
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/5.png' %}"  alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Horno Microondas KALLEY</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#mi-modal5">Detalles</a>
+                        <h6>$254.900</h6>
+
+                        <!-- Ventana modal -->
+                        <div class="modal fade" id="mi-modal5" tabindex="-1" arial-hidden="true" aria-labelledby="label-modal-5" data-bs-backdrop="static">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <!-- Contenido de la caja -->
+                                <div class="modal-content">
+                                    <!-- Encabezado de la caja -->
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Horno Microondas KALLEY 0.7 Negro</h5>
+                                    </div>
+                                    <!-- Cuerpo de la caja -->
+                                    <div class="modal-body">
+                                        <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-6 align-self-center"> <!-- Alineamos la imagen verticalmente -->
+                                                    <img src="{% static 'img/5.png' %}"  class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title text-danger mb-3">$254.900</h5>
+                                                        <div class="input-group mb-3">
+                                                            <select id="cantidad" class="form-select">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                            <button class="btn btn-secondary" type="button">Agregar</button>
+                                                        </div>
+                                                        <h6>Caracteristicas Destacadas</h6>
+                                                        <ul>
+                                                            <li><small class="text-muted">Descongelar por peso o tiempo</small></li>
+                                                            <li><small class="text-muted">Menú con programas prestablecidos para mayor rapidez</small></li>
+                                                            <li><small class="text-muted">Bandeja de vidrio rotatoria y de alta durabilidad</small></li>
+                                                            <li><small class="text-muted">Capacidad 20 Litros</small></li>
+                                                            <li><small class="text-muted">Función de inicio rápido</small></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Metodos de envio -->
+                                        <h6>Metodos de envio</h6>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="envio">
+                                            <label for="envio" class="form-check-label text-muted">Envio a tu direccion - Gratis</p></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="recoger">
+                                            <label for="recoger" class="form-check-label text-muted">Recoger en tienda - Gratis</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-secondary" type="button">Acepto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sexto producto destacado -->
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/6.png' %}"  alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Nevecon LG</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#mi-modal6">Detalles</a>
+                        <h6>$6.159.900<h6>
+
+                        <!-- Ventana modal -->
+                        <div class="modal fade" id="mi-modal6" tabindex="-1" arial-hidden="true" aria-labelledby="label-modal-6" data-bs-backdrop="static">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <!-- Contenido de la caja -->
+                                <div class="modal-content">
+                                    <!-- Encabezado de la caja -->
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Nevecón LG InstaView Door-in-Door 668 Litros Brutos Gris</h5>
+                                    </div>
+                                    <!-- Cuerpo de la caja -->
+                                    <div class="modal-body">
+                                        <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-6 align-self-center"> <!-- Alineamos la imagen verticalmente -->
+                                                    <img src="{% static 'img/6.png' %}"  class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title text-danger mb-3">$6.159.900</h5>
+                                                        <div class="input-group mb-3">
+                                                            <select id="cantidad" class="form-select">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                            <button class="btn btn-secondary" type="button">Agregar</button>
+                                                        </div>
+                                                        <h6>Caracteristicas Destacadas</h6>
+                                                        <ul>
+                                                            <li><small class="text-muted">InstaView</small></li>
+                                                            <li><small class="text-muted">Hygiene Fresh+</small></li>
+                                                            <li><small class="text-muted">Multi Air Flow</small></li>
+                                                            <li><small class="text-muted">Inverter Linear Compressor</small></li>
+                                                            <li><small class="text-muted">LG ThinQ</small></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Metodos de envio -->
+                                        <h6>Metodos de envio</h6>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="envio">
+                                            <label for="envio" class="form-check-label text-muted">Envio a tu direccion - Gratis</p></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="recoger">
+                                            <label for="recoger" class="form-check-label text-muted">Recoger en tienda - Gratis</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-secondary" type="button">Acepto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Septimo producto destacado -->
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/7.png' %}"  alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Ventilador SAMURARI</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#mi-modal7">Detalles</a>
+                        <h6>$129.900</h6>
+
+                        <!-- Ventana modal -->
+                        <div class="modal fade" id="mi-modal7" tabindex="-1" arial-hidden="true" aria-labelledby="label-modal-7" data-bs-backdrop="static">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <!-- Contenido de la caja -->
+                                <div class="modal-content">
+                                    <!-- Encabezado de la caja -->
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Ventilador SAMURAI AirProtec MAXX 2 en 1 Negro</h5>
+                                    </div>
+                                    <!-- Cuerpo de la caja -->
+                                    <div class="modal-body">
+                                        <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-6 align-self-center"> <!-- Alineamos la imagen verticalmente -->
+                                                    <img src="{% static 'img/7.png' %}"  class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title text-danger mb-3">$129.900</h5>
+                                                        <div class="input-group mb-3">
+                                                            <select id="cantidad" class="form-select">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                            <button class="btn btn-secondary" type="button">Agregar</button>
+                                                        </div>
+                                                        <h6>Caracteristicas Destacadas</h6>
+                                                        <ul>
+                                                            <li><small class="text-muted">Nuevo diseño de la helice, para conseguir mayor flujo de aire.</small></li>
+                                                            <li><small class="text-muted">Cuenta con un sistema facil y seguro para ajustar la inclinación vertical.</small></li>
+                                                            <li><small class="text-muted">Sus piezas son fáciles de ensamblar, además cuenta con un instructivo de armado para facilitar su instalación.</small></li>
+                                                            <li><small class="text-muted">Cuenta con tres velocidades que lo hace ideal para todas las situaciones.</small></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Metodos de envio -->
+                                        <h6>Metodos de envio</h6>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="envio">
+                                            <label for="envio" class="form-check-label text-muted">Envio a tu direccion - Gratis</p></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="recoger">
+                                            <label for="recoger" class="form-check-label text-muted">Recoger en tienda - Gratis</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-secondary" type="button">Acepto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Octavo producto destacado -->
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/8.png' %}"  alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Televisor SAMSUNG</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#mi-modal8">Detalles</a>
+                        <h6>$3.399.900</h6>
+
+                        <!-- Ventana modal -->
+                        <div class="modal fade" id="mi-modal8" tabindex="-1" arial-hidden="true" aria-labelledby="label-modal-8" data-bs-backdrop="static">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <!-- Contenido de la caja -->
+                                <div class="modal-content">
+                                    <!-- Encabezado de la caja -->
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">TV SAMSUNG 70" Pulgadas 177.8 cm 4K-UHD LED Plano Smart TV</h5>
+                                    </div>
+                                    <!-- Cuerpo de la caja -->
+                                    <div class="modal-body">
+                                        <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-6 align-self-center"> <!-- Alineamos la imagen verticalmente -->
+                                                    <img src="{% static 'img/8.png' %}"  class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title text-danger mb-3">$3.399.900</h5>
+                                                        <div class="input-group mb-3">
+                                                            <select id="cantidad" class="form-select">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                            <button class="btn btn-secondary" type="button">Agregar</button>
+                                                        </div>
+                                                        <h6>Caracteristicas Destacadas</h6>
+                                                        <ul>
+                                                            <li><small class="text-muted">Colores naturales en su estado puro con cristal fino</small></li>
+                                                            <li><small class="text-muted">Accede fácilmente a tu PC y teléfono móvil en el TV</small></li>
+                                                            <li><small class="text-muted">Un procesador 4K más rápido e inteligente</small></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Metodos de envio -->
+                                        <h6>Metodos de envio</h6>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="envio">
+                                            <label for="envio" class="form-check-label text-muted">Envio a tu direccion - Gratis</p></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="modo-envio" id="recoger">
+                                            <label for="recoger" class="form-check-label text-muted">Recoger en tienda - Gratis</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-secondary" type="button">Acepto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Final del main -->
+
+{% endblock %}
